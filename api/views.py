@@ -69,7 +69,7 @@ def member_detail(request,pk):
     Retrieve, update or delete a member.
     """
     try:
-         members = Member.objects.get(pk=pk)
+         member = Member.objects.get(pk=pk)
     except Member.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
