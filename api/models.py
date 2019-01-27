@@ -1,10 +1,10 @@
 from django.db import models
 
-class Abstract(models.Model):
+class Base(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
-class User(Abstract):
+class User(Base):
     name = models.TextField()
     phone = models.TextField()
     email = models.EmailField(max_length=75)
@@ -15,7 +15,7 @@ class User(Abstract):
     class Meta:
         pass
 
-class Member(Abstract):
+class Member(Base):
     name = models.TextField()
     phone = models.TextField()
     email = models.EmailField(max_length=75)
